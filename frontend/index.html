@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STOA — Architectural Studio Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="studio-shell">
+    <!-- Left Architectural Sidebar -->
+    <aside class="sidebar">
+      <div class="brand-block">
+        <div class="brand-mark">STOA</div>
+        <div class="brand-sub">STUDIO OF ARCHITECTURE</div>
+      </div>
+
+      <button id="new-session-btn" class="new-brief-btn" type="button">
+        <span>+ New Project Brief</span>
+      </button>
+
+      <div class="sidebar-section">
+        <div class="section-label">ACTIVE COMMISSIONS</div>
+        <ul id="session-list" class="session-list">
+          <li class="session-item active" data-project="PRJ-204 // KALLIO PAVILION">
+            <span class="prj-code">PRJ-204</span>
+            <span class="prj-name">Kallio Timber Pavilion</span>
+          </li>
+          <li class="session-item" data-project="PRJ-198 // ESPOO ATRIUM">
+            <span class="prj-code">PRJ-198</span>
+            <span class="prj-name">Espoo Cultural Atrium</span>
+          </li>
+          <li class="session-item" data-project="PRJ-185 // ZONING AUDIT">
+            <span class="prj-code">PRJ-185</span>
+            <span class="prj-name">Waterfront Zoning Audit</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="status-dot"></div>
+        <span>MULTIMODAL ENGINE // READY</span>
+      </div>
+    </aside>
+
+    <!-- Main Drafting Workspace -->
+    <div id="workspace" class="workspace">
+      <header class="topbar">
+        <div class="project-breadcrumb">
+          <span class="crumb-label">WORKSPACE</span>
+          <span class="crumb-sep">/</span>
+          <span id="active-project-title" class="crumb-current">PRJ-204 // KALLIO PAVILION</span>
+        </div>
+        <div class="topbar-meta">
+          <span id="connection-badge" class="mode-tag">DRAFTING SANDBOX</span>
+        </div>
+      </header>
+
+      <main id="chat-feed" class="chat-feed">
+        <div class="welcome-sheet">
+          <div class="sheet-kicker">STUDIO WORKFLOW ASSISTANT</div>
+          <h2>Architectural Planning, Code Compliance &amp; Visual Plan Review</h2>
+          <p>Attach, drag-and-drop, or paste (Ctrl+V) any floorplan, elevation sketch, or site photograph alongside your query.</p>
+          <div class="quick-prompts">
+            <button type="button" class="preset-chip" data-prompt="Verify structural timber load tolerances and fire-rating compliance for PRJ-204.">
+              01. Timber Fire-Rating Audit
+            </button>
+            <button type="button" class="preset-chip" data-prompt="Generate a daylighting and solar orientation brief for the south facade.">
+              02. South Facade Solar Study
+            </button>
+            <button type="button" class="preset-chip" data-prompt="Prepare municipality planning permit submittal checklist and issue revision.">
+              03. Permit Submittal Package
+            </button>
+          </div>
+        </div>
+      </main>
+
+      <div class="composer-wrapper">
+        <!-- Staged Image Preview Bar (Hidden until an image is attached) -->
+        <div id="attachment-preview-bar" class="attachment-preview-bar hidden">
+          <div class="preview-card">
+            <img id="preview-thumb" src="" alt="Attached architectural drawing" />
+            <div class="preview-details">
+              <span class="preview-kicker">ATTACHED DRAWING / REFERENCE</span>
+              <span id="preview-filename" class="preview-name">plan_sheet.png</span>
+            </div>
+            <button id="remove-attachment-btn" type="button" class="remove-attachment-btn" title="Remove attachment">
+              ✕
+            </button>
+          </div>
+        </div>
+
+        <form id="prompt-form" class="composer-box">
+          <input
+            id="image-file-input"
+            type="file"
+            accept="image/*,.heic,.heif,.tif,.tiff,.avif,.webp,.svg,.bmp,.ico"
+            hidden
+          />
+          <button id="attach-btn" type="button" class="attach-btn" title="Attach drawing, elevation, or site photo">
+            + PLAN
+          </button>
+          <input
+            id="prompt-input"
+            type="text"
+            placeholder="Enter spatial brief, drop a drawing, or paste an image (Ctrl+V)..."
+            autocomplete="off"
+          />
+          <button id="send-btn" type="submit">EXECUTE</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
