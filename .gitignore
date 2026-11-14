@@ -1,0 +1,20 @@
+# Secrets: never commit
+.env
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# PyCharm
+.idea/
+
+# Data and generated files (too big / not ours to publish)
+data/
+*.db
+*.pdf
+*.dwg
+*.dxf
+*.ifc
+eval/smoke_results.jsonl

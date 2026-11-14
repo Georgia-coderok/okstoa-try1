@@ -1,0 +1,8 @@
+id,question,type,entities,language,expected_answer,answer_file,answer_page,answer_bbox,notes
+EX1,EXAMPLE - What is the project number?,T1,,en,,,,,"delete EX rows when you add real questions"
+EX2,EXAMPLE - What is the fire rating of door D-214?,T2,tag=D-214,en,EI60,A-601.pdf,0,"[410,220,455,232]",
+EX3,EXAMPLE - How many windows are on level 2?,T3,element=window;level=2,en,,,,,
+EX4,EXAMPLE - What is the width of corridor 1.05?,T4,room=1.05,en,,,,,
+EX5,EXAMPLE - Which detail shows the roof edge?,T5,,en,,,,,
+EX6,EXAMPLE - Total wall area of type W3?,T6,type=W3,en,,,,,
+EX7,EXAMPLE - Which rooms are next to the stairwell?,T7,room=stairwell,en,,,,,
